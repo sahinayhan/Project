@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ie.itcarlow.sra"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="ie.itcarlow.sra.MainActivity"
+            android:label="@string/news_feed" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ie.itcarlow.sra.Forgot_password"
+            android:label="@string/title_activity_forgot_password" >
+        </activity>
+        <activity
+            android:name="ie.itcarlow.sra.Signup"
+            android:label="@string/title_activity_signup" >
+        </activity>
+        <activity
+            android:name="ie.itcarlow.sra.Listview"
+            android:label="@string/title_activity_listview" >
+        </activity>
+        <activity
+            android:name="ie.itcarlow.sra.SearchActivity"
+            android:label="@string/title_activity_search" >
+        </activity>
+        <activity
+            android:name="ie.itcarlow.sra.Profile"
+            android:label="@string/title_activity_profile" >
+        </activity>
+        <activity
+            android:name="ie.itcarlow.sra.ShoppingList"
+            android:label="@string/title_activity_shopping_list" >
+        </activity>
+        <activity
+            android:name="ie.itcarlow.sra.Messages"
+            android:label="@string/title_activity_messages" >
+        </activity>
+        <activity
+            android:name="ie.itcarlow.sra.Requests"
+            android:label="@string/title_activity_requests" >
+        </activity>
+        <activity
+            android:name="ie.itcarlow.sra.FriendSearch"
+            android:label="@string/title_activity_friend_search" >
+        </activity>
+        <activity
+            android:name="ie.itcarlow.sra.NewsFeed"
+            android:label="@string/title_activity_news_feed" >
+        </activity>
+        <activity
+            android:name="ie.itcarlow.sra.DrawerActivity"
+            android:label="@string/title_activity_drawer" >
+        </activity>
+        <activity android:name="Login"></activity>
+    </application>
+
+</manifest>
