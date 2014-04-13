@@ -9,56 +9,67 @@
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:orientation="vertical" >
-		
-         <EditText
-            android:id="@+id/firstname"
+
+        <EditText
+            android:id="@+id/signup_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/firstname"
             android:inputType="text"
             android:singleLine="true" >
         </EditText>
-        
+
         <EditText
-            android:id="@+id/lastname"
+            android:id="@+id/signup_firstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/firstname"
+            android:inputType="text"
+            android:singleLine="true" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/signup_lastname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/lastname"
             android:inputType="text"
             android:singleLine="true" >
         </EditText>
+
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/signup_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:singleLine="true" >
         </EditText>
-        
+
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/signup_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:singleLine="true" >
         </EditText>
-		 <EditText
-            android:id="@+id/password_confirm"
+
+        <EditText
+            android:id="@+id/signup_passconfirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password_repeat"
             android:inputType="textPassword"
             android:singleLine="true" >
         </EditText>
+
         <Button
-            android:id="@+id/signup"
+            android:id="@+id/button_signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sign_up" >
         </Button>
-
     </LinearLayout>
 
 </LinearLayout>

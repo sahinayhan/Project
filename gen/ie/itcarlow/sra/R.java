@@ -39,27 +39,30 @@ public final class R {
         public static final int venus=0x7f02000b;
     }
     public static final class id {
-        public static final int action_settings=0x7f090015;
+        public static final int action_settings=0x7f090018;
+        public static final int button_signup=0x7f090011;
         public static final int content_frame=0x7f090001;
         public static final int drawer_layout=0x7f090000;
-        public static final int email=0x7f09000d;
-        public static final int feed_text1=0x7f090013;
-        public static final int feed_text2=0x7f090014;
-        public static final int firstname=0x7f09000b;
+        public static final int email=0x7f090012;
+        public static final int feed_text1=0x7f090016;
+        public static final int feed_text2=0x7f090017;
         public static final int forgot_password=0x7f090007;
         public static final int hello=0x7f09000a;
-        public static final int image1=0x7f090011;
-        public static final int lastname=0x7f09000c;
+        public static final int image1=0x7f090014;
         public static final int left_drawer=0x7f090002;
         public static final int listView1=0x7f090003;
-        public static final int listitem_imageview=0x7f090012;
+        public static final int listitem_imageview=0x7f090015;
         public static final int news_feed=0x7f090009;
         public static final int password=0x7f090005;
-        public static final int password_confirm=0x7f09000e;
         public static final int register=0x7f090008;
-        public static final int send=0x7f090010;
+        public static final int send=0x7f090013;
         public static final int sign_in=0x7f090006;
-        public static final int signup=0x7f09000f;
+        public static final int signup_email=0x7f09000e;
+        public static final int signup_firstname=0x7f09000c;
+        public static final int signup_lastname=0x7f09000d;
+        public static final int signup_passconfirm=0x7f090010;
+        public static final int signup_password=0x7f09000f;
+        public static final int signup_username=0x7f09000b;
         public static final int username=0x7f090004;
     }
     public static final class layout {
