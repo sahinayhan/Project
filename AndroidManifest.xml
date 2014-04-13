@@ -1,72 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ie.itcarlow.sra"
-    android:versionCode="1"
-    android:versionName="1.0" >
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="ie.itcarlow.sra">
 
-    <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="18" />
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="18"/>
 
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name="ie.itcarlow.sra.MainActivity"
-            android:label="@string/news_feed" >
+    <uses-permission android:name="android.permission.INTERNET"/>
+   <permission android:name="ie.itcarlow.sra.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+
+   <uses-permission android:name="ie.itcarlow.sra.permission.C2D_MESSAGE"/>
+   <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+   <uses-permission android:name="android.permission.WAKE_LOCK"/>
+   <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+   <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+   <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/news_feed" android:name="ie.itcarlow.sra.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name="ie.itcarlow.sra.Forgot_password"
-            android:label="@string/title_activity_forgot_password" >
+        <activity android:label="@string/title_activity_forgot_password" android:name="ie.itcarlow.sra.Forgot_password">
         </activity>
-        <activity
-            android:name="ie.itcarlow.sra.Signup"
-            android:label="@string/title_activity_signup" >
+        <activity android:label="@string/title_activity_signup" android:name="ie.itcarlow.sra.Signup">
         </activity>
-        <activity
-            android:name="ie.itcarlow.sra.Listview"
-            android:label="@string/title_activity_listview" >
+        <activity android:label="@string/title_activity_listview" android:name="ie.itcarlow.sra.Listview">
         </activity>
-        <activity
-            android:name="ie.itcarlow.sra.SearchActivity"
-            android:label="@string/title_activity_search" >
+        <activity android:label="@string/title_activity_search" android:name="ie.itcarlow.sra.SearchActivity">
         </activity>
-        <activity
-            android:name="ie.itcarlow.sra.Profile"
-            android:label="@string/title_activity_profile" >
+        <activity android:label="@string/title_activity_profile" android:name="ie.itcarlow.sra.Profile">
         </activity>
-        <activity
-            android:name="ie.itcarlow.sra.ShoppingList"
-            android:label="@string/title_activity_shopping_list" >
+        <activity android:label="@string/title_activity_shopping_list" android:name="ie.itcarlow.sra.ShoppingList">
         </activity>
-        <activity
-            android:name="ie.itcarlow.sra.Messages"
-            android:label="@string/title_activity_messages" >
+        <activity android:label="@string/title_activity_messages" android:name="ie.itcarlow.sra.Messages">
         </activity>
-        <activity
-            android:name="ie.itcarlow.sra.Requests"
-            android:label="@string/title_activity_requests" >
+        <activity android:label="@string/title_activity_requests" android:name="ie.itcarlow.sra.Requests">
         </activity>
-        <activity
-            android:name="ie.itcarlow.sra.FriendSearch"
-            android:label="@string/title_activity_friend_search" >
+        <activity android:label="@string/title_activity_friend_search" android:name="ie.itcarlow.sra.FriendSearch">
         </activity>
-        <activity
-            android:name="ie.itcarlow.sra.NewsFeed"
-            android:label="@string/title_activity_news_feed" >
+        <activity android:label="@string/title_activity_news_feed" android:name="ie.itcarlow.sra.NewsFeed">
         </activity>
-        <activity
-            android:name="ie.itcarlow.sra.DrawerActivity"
-            android:label="@string/title_activity_drawer" >
+        <activity android:label="@string/title_activity_drawer" android:name="ie.itcarlow.sra.DrawerActivity">
         </activity>
-        <activity android:name="Login"></activity>
-    </application>
+        <activity android:name="Login"/>
+        <service android:name=".GCMIntentService"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="ie.itcarlow.sra"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="ie.itcarlow.sra"/>
+            </intent-filter>
+        </receiver>
+    
+        <activity android:launchMode="singleTop" android:name=".RegisterActivity"/>
+</application>
 
 </manifest>

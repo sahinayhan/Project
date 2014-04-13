@@ -1,5 +1,13 @@
 package ie.itcarlow.sra;
 
+import java.io.IOException;
+
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.json.jackson.JacksonFactory;
+
+import ie.itcarlow.sra.userendpoint.Userendpoint;
+import ie.itcarlow.sra.userendpoint.model.User;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.widget.Button;
@@ -49,9 +57,50 @@ public class Signup extends Activity {
 				userEmailEditText = (EditText) findViewById(R.id.signup_email);
 				Validate.isEmailAddress(userEmailEditText, true);
 				userEmailParam = userEmailEditText.getText().toString();
-
+				
+				new registerUserTask().execute();
 			}
 		});
 	}
+	
+	private class registerUserTask extends AsyncTask<Void, Void, Void> {
+
+	    /**
+	     * Calls appropriate CloudEndpoint to indicate that user checked into a place.
+	     *
+	     * @param params the place where the user is checking in.
+	     */
+	    @Override
+	    protected Void doInBackground(Void... params) {
+	      User newUser = new User();
+	      
+	      // Set the ID of the store where the user is. 
+	      // This would be replaced by the actual ID in the final version of the code. 
+	      newUser.setFirstName(firstnameParam);
+	      newUser.setLastName(lastnameParam);
+	      newUser.setUsername(usernameParam);
+	      newUser.setPassword(passwordParam);
+	      newUser.setUserEmail(userEmailParam);
+	      newUser.setUserStatus(true);
+
+	      Userendpoint.Builder builder = new Userendpoint.Builder(
+	          AndroidHttp.newCompatibleTransport(), new JacksonFactory(),
+	          null);
+	          
+	      builder = CloudEndpointUtils.updateBuilder(builder);
+
+	      Userendpoint endpoint = builder.build();
+	      
+
+	      try {
+	        endpoint.insertUser(newUser).execute();
+	      } catch (IOException e) {
+	        // TODO Auto-generated catch block
+	        e.printStackTrace();
+	      }
+
+	      return null;
+	    }
+	  }
 
 }
